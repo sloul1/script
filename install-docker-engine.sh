@@ -1,5 +1,8 @@
 # This shell script is created according to Docker's official documentation. https://docs.docker.com/engine/install/ubuntu/                                                            
 
+# Choose bash for command interpreter
+#!/bin/bash
+
 # remove conflicting packages
 apt-get remove docker.io docker-compose docker-compose-v2 docker-doc podman-docker containerd runc
 
