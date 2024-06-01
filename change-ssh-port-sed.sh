@@ -17,4 +17,8 @@ sed -i 's/#Port 22/Port 2424/' /etc/ssh/sshd_config
 # Restart SSH service to apply changes
 systemctl restart sshd
 
+# Changed port configuration can be tested for example: $ ssh user@192.168.0.10 -p 2424
+
+
+
 
