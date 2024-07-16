@@ -5,15 +5,23 @@
 # worksheet edit permissions were considered for all team members.
 
 # Script uses .env file with four variables as mentioned below.
-# Create .env file with editor: nano .env
-# Add four lines below without "#" in beginning of line.
+# Edit .env file variables acccording to your needs
 
 # SPREADSHEET_LINK="https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID_HERE/export?format=xlsx"
 # BACKUP_FILENAME="type string of your choice here for identifying your backup files"
 # BACKUP_DIR="/path/to/your/backup/directory"
 # LOG_FILE="${BACKUP_DIR}/backup_log.txt"
 
-# .env file should exist in same location with this script. 
+# .env file should exist in same location with this script.
+
+# Timer function
+INTERVAL=3600  # Change this to the desired interval in seconds
+LAST_RUN=$(date +%s)
+
+while true; do
+  CURRENT_TIME=$(date +%s)
+  if [ $(($CURRENT_TIME - $LAST_RUN)) -ge "$INTERVAL" ]; then
+
 
 echo "This is a script for retrieving copy of a shared Google Docs spreadsheet."  
 sleep 3
@@ -66,3 +74,9 @@ echo "Log ${LOG_FILE}' created."
 ## fi
 
 echo "Backup ready. Script exited."
+
+LAST_RUN=$CURRENT_TIME
+  else
+    sleep 1
+  fi
+done
