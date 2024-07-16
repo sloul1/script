@@ -4,8 +4,8 @@
 # Script was inspired by the the final stages of the purchase of soccer uniforms, when
 # worksheet edit permissions were considered for all team members.
 
-# Create a .env file with four variables below before running this script by: touch .env
-# Open .env file with editor: nano .env
+# Script uses .env file with four variables as mentioned below.
+# Create .env file with editor: nano .env
 # Add four lines below without "#" in beginning of line.
 
 # SPREADSHEET_LINK="https://docs.google.com/spreadsheets/d/YOUR_SHEET_ID_HERE/export?format=xlsx"
@@ -45,24 +45,24 @@ echo "Downloading file..."
 sleep 2
 curl -s -X GET --location \
   ${SPREADSHEET_LINK} > "${BACKUP_DIR}/${TIMESTAMP}_${BACKUP_FILENAME}.xlsx"
-echo "File download successful."
+echo "File '${TIMESTAMP}_${BACKUP_FILENAME}.xlsx' download successful."
 
 sleep 1
 # Log the backup entry in the log file
 log_backup
-echo "Log created."
+echo "Log ${LOG_FILE}' created."
+
 # Create a compressed archive (tar.gz) of the xlsx file
 ## tar -czf "${BACKUP_DIR}/${TIMESTAMP}_${BACKUP_FILENAME}_backup.tar.gz" "${BACKUP_DIR}/${TIMESTAMP}_${BACKUP_FILENAME}.xlsx"
 
+# Remove the local backup file (optional)
+## rm -f "${BACKUP_DIR}/${TIMESTAMP}.xlsx"
 
-###!!!Features under this are not tested yet!!!###
+###!!!Features below this are not tested yet!!!###
 
 # If you have a Google Cloud Storage bucket, upload the backup to it
 ## if [ ! -z "${GCS_BUCKET}" ]; then
 ##  gsutil cp "${BACKUP_DIR}/${TIMESTAMP}.xlsx" "gs://${GCS_BUCKET}/"
 ## fi
-
-# Remove the local backup file (optional)
-## rm -f "${BACKUP_DIR}/${TIMESTAMP}.xlsx"
 
 echo "Backup ready. Script exited."
