@@ -17,6 +17,8 @@
 # BACKUP_DIR="/path/to/your/backup/directory"
 # LOG_FILE="${BACKUP_DIR}/backup_log.txt"
 
+# Visual timer function's file check "INTERVAL" time is given in seconds.
+
 # Name of downloaded backup is $TIMESTAMP(yyyymmdd-hhmmss) + _$BACKUP_FILENAME + export?format(xlsx or csv)
 # resulting file '20240730-013418_Gotham-City-FC-team-uniforms.xlsx'
 # Script logs downloads to "backup_log.txt" file.
@@ -74,7 +76,7 @@ fi
 
 # Function: visual timer
 timer(){
-INTERVAL=10  # Change this to the desired interval in seconds
+INTERVAL=3600  # Change this to the desired interval in seconds
 echo "Waiting $INTERVAL seconds until next check of file contents."
 
 for ((i=$INTERVAL; i>=0; i--)); do
