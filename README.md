@@ -1,5 +1,4 @@
-  GNU nano 6.2                                                                      README.md                                                                                
-# script
+# Script
 
 Scripts for system administration and automating various things.
 
