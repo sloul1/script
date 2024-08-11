@@ -1,9 +1,9 @@
   GNU nano 6.2                                                                      README.md                                                                                
 # script
 
-For system administration and scripts for automating various things.
+Scripts for system administration and automating various things.
 
-To download script using Linux shell cĺick script in github and copy link address from "Raw" box.
+To download script using Linux shell cĺick preferred script in Github and copy link address from "Raw" box.
 ![](images/github-copy-raw-link.webp)
 You can use wget for downloading script.
 ```shell
