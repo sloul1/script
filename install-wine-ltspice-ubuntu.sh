@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # This script is created according to https://wiki.winehq.org/Ubuntu
+# Script can be used also for installing and uninstalling LTspice.
 # Tested on Ubuntu 22.04.03 LTS: $uname -a
 # VirtualBox 6.5.0-15-generic #15~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Fri Jan 12 18:54:30 UTC 2 x86_64 x86_64 x86_64 GNU/Linux
 
@@ -72,15 +73,17 @@ wineversion=$(wine --version)
 echo "Installed '$wineversion'"
 echo ""
 # Ask if user wants to install LTspice
-echo "PLEASE REMOVE ANY DOWNLOADED LTSPICE INSTALLERS IN DIRECTORY YOU'RE RUNNING THIS SCRIPT"
+echo "PLEASE REMOVE ANY DOWNLOADED LTSPICE INSTALLERS IN SAME DIRECTORY YOU'RE RUNNING THIS SCRIPT."
+echo "THIS SCRIPT CAN BE USED ALSO LAUNCHING UNINSTALLATION OF LTSPICE."
+echo "ANSWER 'y' ON NEXT STEP EVEN IF YOU WANT TO UNINSTALL LTSPICE AS THIS LAUNCHES PROGRAM FOR UNINSTALLING."
 echo ""
 sleep 5
-echo "Would you also like to download and install LTspice?"
+echo "Would you also like to download and install or uninstall LTspice?"
 read -p "Enter 'y' for yes or any other key for no: " response
 
 if [ "$response" = "y" ]; then
   # Download and install LTspice using Wine
-  wget wget https://ltspice.analog.com/software/LTspice64.msi
+  wget https://ltspice.analog.com/software/LTspice64.msi
   wine LTspice64.msi
   echo "LTspice installed."
   rm LTspice64.msi
