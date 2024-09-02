@@ -1,11 +1,16 @@
 #!/bin/bash
 
 # This script is created according to https://wiki.winehq.org/Ubuntu
-# Script can be used also for installing and uninstalling LTspice.
-# Tested on Ubuntu 22.04.03 LTS: $uname -a
+# Script can be also used for installing LTspice.
+
+# Tested on Ubuntu 22.04.03 LTS VM and Ubuntu 22.04.4 LTS laptop: $uname -a
 # VirtualBox 6.5.0-15-generic #15~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Fri Jan 12 18:54:30 UTC 2 x86_64 x86_64 x86_64 GNU/Linux
+# Linux xxxxxx-xxxxxx 6.8.0-40-generic #40~22.04.3-Ubuntu SMP PREEMPT_DYNAMIC Tue Jul 30 17:30:19 UTC 2 x86_64 x86_64 x86_64 GNU/Linux
 
 # Prompt user to choose operating system version and installation branch
+echo "This script installs wine and optionally LTspice."
+echo "Please follow script instructions carefully."
+sleep 3
 echo "Choose your Ubuntu version for wine installation:"
 echo "1. 20.04 Focal Fossa (Linux Mint 20.x)"
 echo "2. 22.04 Jammy Jellyfish (Linux Mint 21.x)"
@@ -70,15 +75,15 @@ sudo apt install --install-recommends ${package}
 
 # Show installed version of Wine
 wineversion=$(wine --version)
-echo "Installed '$wineversion'"
+echo "INSTALLED '$wineversion'"
 echo ""
 # Ask if user wants to install LTspice
-echo "PLEASE REMOVE ANY DOWNLOADED LTSPICE INSTALLERS IN SAME DIRECTORY YOU'RE RUNNING THIS SCRIPT."
-echo "THIS SCRIPT CAN BE USED ALSO LAUNCHING UNINSTALLATION OF LTSPICE."
-echo "ANSWER 'y' ON NEXT STEP EVEN IF YOU WANT TO UNINSTALL LTSPICE AS THIS LAUNCHES PROGRAM FOR UNINSTALLING."
+echo "PLEASE REMOVE ANY DOWNLOADED LTSPICE INSTALLERS IN SAME DIRECTORY BEFORE RUNNING THIS SCRIPT."
+echo "Answer 'y' on next step to install LTspice."
 echo ""
 sleep 5
-echo "Would you also like to download and install or uninstall LTspice?"
+echo "Would you also like to download and install LTspice?"
+echo "Do not tick 'Launch LTspice' checkbox at the end of installation."
 read -p "Enter 'y' for yes or any other key for no: " response
 
 if [ "$response" = "y" ]; then
@@ -88,4 +93,5 @@ if [ "$response" = "y" ]; then
   echo "LTspice installed."
   rm LTspice64.msi
   echo "Downloaded installation file removed."
+  echo "LTspice can be removed from Ubuntu 'Show Applications' menu 'Uninstall LTspice' link"
 fi
