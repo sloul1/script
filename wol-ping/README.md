@@ -4,7 +4,7 @@ This bash script is for waking up server with wakeonlan utility.
 Script needs .env file in same location it is run with server's
 IP address and MAC address variables to work as shown below.
 
-SERVER="xxx.xxx.xxx.xxx"
+SERVER="xxx.xxx.xxx.xxx" \
 WAKEONLAN_MAC="xx:xx:xx:xx:xx:xx"
 
 Script checks if wakeonlan utility is installed and installs it if not.
