@@ -14,3 +14,8 @@ Remember to make .sh files are excutable before trying to run them:
 ```shell
 chmod +x updates.sh
 ```
+
+Script might need to be run as super user:
+```shell
+sudo ./script.sh
+```
