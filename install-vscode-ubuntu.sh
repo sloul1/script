@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# This script is created 2024/09 for installing Visual Studio Code
+# This script is created 2024/09 for installing Visual Studio Code for Ubuntu Workstation 24.04
 # according to https://code.visualstudio.com/docs/setup/linux
 
 sudo apt-get update
