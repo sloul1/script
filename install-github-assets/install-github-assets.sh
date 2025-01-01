@@ -25,11 +25,12 @@
 # source /path/to/your/script/jq_install.sh  # Absolute file path 
 source ./install-dependencies.sh             # Relative file path (same directory)
 
-# Uncomment these lines if you want to enable user input for GitHub username and repository name
+# Uncomment two lines below if you want to enable user input interaction for GitHub username and repository variables
 # read -p "Enter your GitHub username: " GH_USERNAME
 # read -p "Enter your GitHub repository name: " GH_REPO
 
-# Hardcoded values for demonstration purposes (replace these with user input if enabled)
+# Hardcoded values for variables
+# Comment out with '#' two lines below if you want to use user input interaction above
 GH_USERNAME="termux"
 GH_REPO="termux-app"
 
