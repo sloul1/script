@@ -12,7 +12,6 @@
 # It lists available versions and there is user interaction for choosing file to download from list.
 
 # Use 'sudo ./install-github-assets.sh' for installing with elevated user permissions if needed.
-# Script can also be run with '-y' option to minimize user interaction 'sudo ./install-github-assets.sh -y'.
 
 # Script needs 'jq' to operate and calls external 'install-dependencies.sh' file for checking if 'jq' is installed.
 # As default 'install-dependenies.sh' needs to be in same directory with tthis script. There is also some option below
