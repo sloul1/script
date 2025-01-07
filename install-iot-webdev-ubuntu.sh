@@ -1,9 +1,26 @@
 #!/bin/bash
 
-# Created 01/2025, tested on Ubuntu 24.04.1 LTS (Noble Numbat) in docker container 
-# sudo docker run -ti --rm ubuntu /bin/bash
+# Created 01/2025 
 
-# This script is created to automate the setup of development environment on Ubuntu
+# This script is created to automate the setup of development environment install on Ubuntu.
+
+# Tested on native Ubuntu 24.04.1 LTS (Noble Numbat) OS
+# and in Ubuntu 24.04.1 LTS (Noble Numbat) docker container
+
+# Script installs: curl, tzdata, git, docker engine community edition, nvm, node  
+
+# Running script on Ubuntu 24.04.1 LTS (Noble Numbat) in docker container
+
+# sudo docker run -ti --rm ubuntu /bin/bash
+# apt update && apt install curl -y
+# curl https://raw.githubusercontent.com/sloul1/script/refs/heads/main/install-iot-webdev-ubuntu.sh | bash -x
+
+# Running script on native Ubuntu 24.04.1 LTS
+
+# sudo apt update && sudo apt install curl -y
+# curl -O https://raw.githubusercontent.com/sloul1/script/refs/heads/main/install-iot-webdev-ubuntu.sh
+# chmod +x install-iot-webdev-ubuntu.sh
+# sudo ./install-iot-webdev-ubuntu.sh
 
 # Links to developer tools that will be installed
 
@@ -25,7 +42,7 @@ apt install git -y
 
 # Install docker engine community edition
 # Remove conflicting packages
-apt-get remove docker.io docker-compose docker-compose-v2 docker-doc podman-docker containerd runc
+apt-get remove -y docker.io docker-compose docker-compose-v2 docker-doc podman-docker containerd runc
 
 # Add Docker's offical GPG key:
 apt-get update
@@ -45,7 +62,7 @@ echo \
 apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
 
 # verify installation by running hello-world
-docker run hello-world
+# docker run hello-world
 
 # Download and install nvm:
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
