@@ -4,8 +4,9 @@
 
 # This script is created to automate the setup of development environment install on Ubuntu.
 
-# Tested on native Ubuntu 24.04.1 LTS (Noble Numbat) OS
-# and in Ubuntu 24.04.1 LTS (Noble Numbat) docker container
+# Tested on native Ubuntu 24.04.1 LTS (Noble Numbat) OS,
+# on Ubuntu 24.04.1 LTS (Noble Numbat) docker container
+# and in Windows 11 using WSL and Ubuntu 24.04.1 LTS.
 
 # Script installs: curl, tzdata, git, docker engine community edition, nvm, node  
 
@@ -16,8 +17,10 @@
 # curl https://raw.githubusercontent.com/sloul1/script/refs/heads/main/install-iot-webdev-ubuntu.sh | bash -x
 
 # Running script on native Ubuntu 24.04.1 LTS
+# or on Windows 11 using WSL and Ubuntu 24.04.1 LTS
 
-# sudo apt update && sudo apt install curl -y
+# sudo apt update && sudo apt upgrade
+# sudo apt install curl -y
 # curl -O https://raw.githubusercontent.com/sloul1/script/refs/heads/main/install-iot-webdev-ubuntu.sh
 # chmod +x install-iot-webdev-ubuntu.sh
 # sudo ./install-iot-webdev-ubuntu.sh
