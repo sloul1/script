@@ -13,6 +13,10 @@
 
 # This script resolves this issue.
 
+# Credits for figuring out the solution and making possible
+# for me to create this script goes to Petru Gulian.
+# https://gulian.uk/how-to-install-cisco-packet-tracer-on-ubuntu-23-10-or-24-04/
+
 # Packages installed by this script can be uninstalled:
 # sudo apt remove packettracer libgl1-mesa-glx -y
 
