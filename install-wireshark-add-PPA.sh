@@ -19,3 +19,6 @@ sudo apt update && sudo apt-cache policy wireshark
 
 # Install latest stable Wireshark
 sudo apt install wireshark -y
+
+# Query wireshark version
+wireshark -v
