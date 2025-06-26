@@ -10,7 +10,7 @@ if is_jq_installed; then
     echo "jq is already installed."
 else
     # Ask the user if they want to install jq
-    read -p "jq is not installed. Do you want to install it? (y/n): " answer
+    read -p "jq is not installed. Would you like to install it? (y/n): " answer
 
     # User input validation
     while [[ "$answer" != [YyNn] ]]; do
@@ -21,7 +21,7 @@ else
     if [[ $answer == [Yy] ]]; then
         # Check the platform and run appropriate package manager
         case "$(uname -s)" in
-            Linux*)     apt-get install jq ;;
+            Linux*)     sudo apt update && sudo apt install jq -y;;
             # Darwin*)    brew install jq ;; # Darwin version installation disabled as not yet tested
             *)         echo "Unsupported platform. Please install jq manually." ;;
         esac
