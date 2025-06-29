@@ -2,6 +2,9 @@
 
 Scripts for system administration and automating various things.
 
+> [!CAUTION] 
+> Always CHECK and UNDERSTAND functions of the script files before running them on your system!
+
 To download script using Linux shell cĺick preferred script in Github and copy link address from "Raw" box.
 ![](images/github-copy-raw-link.webp)
 
@@ -10,12 +13,12 @@ You can use wget for downloading script.
 wget https://github.com/sloul1/script/raw/main/updates.sh
 ```
 
-Remember to make .sh files are excutable before trying to run them:
+Make .sh files are excutable before trying to run them:
 ```shell
 chmod +x updates.sh
 ```
 
-Script might need to be run as super user:
+If the commands in the script aren't created with `sudo` you might need to run the script as super user:
 ```shell
-sudo ./script.sh
+sudo ./updates.sh
 ```
