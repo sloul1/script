@@ -1,13 +1,21 @@
 #!/bin/bash
 
 # Created: 2025/06/25
-# Tested: 2025/06/25
-# Test platform: Ubuntu 24.04.2 LTS (Noble Numbat) desktop
+# Edited: 2025/06/30
+
+# Tested on:
+
+# Ubuntu 24.04.2 LTS (Noble Numbat) desktop
+
+# OS: Linux Mint 22.1 (Xia)
+# Kernel: Linux 6.8.0-62-generic
+# Architecture: x86-64
 
 # This script installs VSCodium including repository.
 
 # "VSCodium is a community-driven, freely-licensed binary distribution of Microsoft’s editor VS Code."
 # "Free/Libre Open Source Software Binaries of VS Code"
+
 # This script is created according to:
 # https://vscodium.com/#install-on-debian-ubuntu-deb-package
 
@@ -23,4 +31,3 @@ echo 'deb [arch=amd64,arm64 signed-by=/usr/share/keyrings/vscodium-archive-keyri
 
 # Update then install vscodium (if you want vscodium-insiders, then replace codium by codium-insiders):
 sudo apt update && sudo apt install codium
-
