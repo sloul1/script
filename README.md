@@ -5,7 +5,7 @@ Scripts for system administration and automating various things.
 > [!CAUTION] 
 > Always CHECK and UNDERSTAND functions of THE SCRIPT files before running them on your system!
 
-To download script using Linux shell cĺick preferred script in Github and copy link address from "Raw" box.
+To download script using Linux shell click preferred script in Github and copy link address from "Raw" box.
 ![](images/github-copy-raw-link.webp)
 
 You can use wget for downloading script.
