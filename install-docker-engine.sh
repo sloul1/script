@@ -2,8 +2,11 @@
 
 ## documentation starts
 #
-# Created 2024/04, edited 2025/01
-# Tested on: Ubuntu desktop 24.04.1 LTS (Noble Numbat)  
+# Created 2024/04, edited 2025/08
+# 
+# Tested on:
+# Ubuntu desktop 24.04.1 LTS (Noble Numbat)  
+# Linux Mint 22.1 LTS (Xia)
 #
 # This shell script is created according to Docker's official documentation.
 # https://docs.docker.com/engine/install/ubuntu/
@@ -56,7 +59,7 @@ sudo chmod a+r /etc/apt/keyrings/docker.asc
 # Add the repository to Apt sources:
 echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
-  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  $(. /etc/os-release && echo "$UBUNTU_CODENAME") stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt-get update
 
