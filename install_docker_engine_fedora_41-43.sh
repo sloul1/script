@@ -62,20 +62,21 @@ sudo dnf -y install docker-ce docker-ce-cli containerd.io docker-buildx-plugin d
 ## Start Docker Engine
 sudo systemctl enable --now docker
 
-# Get list of groups user belongs to
-groups=$(groups)
+## Get list of groups user belongs to
+#groups=$(groups)
+#
+## Linux postinstall: Check if 'docker' is in the list of groups
+#if echo "$groups" | grep -q -w "docker"; then
+#  # User is part of docker group, print confirmation message
+#  echo "User is a member of the 'docker' group. skipping 'Linux postinstall'."
+#else
+#  echo "User is not part of docker group, adding to group."
 
-# Linux postinstall: Check if 'docker' is in the list of groups
-if echo "$groups" | grep -q -w "docker"; then
-  # User is part of docker group, print confirmation message
-  echo "User is a member of the 'docker' group. skipping 'Linux postinstall'."
-else
-  echo "User is not part of docker group, adding to group."
-  sudo usermod -aG docker "$USER"
+sudo usermod -aG docker "$USER"
 
 # no logging out before using "docker" command without root privileges
 newgrp docker
 
-fi
+## fi
 # verify installation by running hello-world
 docker run hello-world
